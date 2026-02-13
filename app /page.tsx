@@ -12,4 +12,4 @@ export default function Home() {
       */}
     </main>
   );
-}
+} // <--- ВОТ ЭТА СКОБКА БЫЛА ПРОПУЩЕНА
