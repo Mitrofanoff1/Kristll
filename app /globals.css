@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #FFCBCB;
+}
+
+body {
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+/* Настройка цвета выделения текста под твой акцентный цвет */
+::selection {
+  background-color: var(--accent);
+  color: #000;
+}
+
+/* Плавный скролл для всего сайта */
+html {
+  scroll-behavior: smooth;
+}
