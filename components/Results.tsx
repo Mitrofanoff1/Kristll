@@ -51,7 +51,7 @@ const Results = () => {
               {slides.map((slide) => (
                 <div key={slide.id} className="w-full flex-shrink-0 p-1.5 md:p-4">
                   
-                  {/* ФОТОГРАФИИ В ОДИН РЯД (И на ПК, и на Мобильных) */}
+                  {/* ФОТОГРАФИИ В ОДИН РЯД */}
                   <div className="flex flex-row gap-1.5 md:gap-4">
                     
                     {/* ДО */}
@@ -74,7 +74,7 @@ const Results = () => {
 
                   </div>
 
-                  {/* ОПИСАНИЕ */}
+                  {/* ОПИСАНИЕ ПОД КАРТИНКАМИ */}
                   <div className="text-center mt-4 md:mt-6 pb-2">
                     <p className="text-gray-900 font-black uppercase text-xs md:text-lg tracking-tight leading-none">
                         {slide.area}
@@ -89,7 +89,7 @@ const Results = () => {
             </div>
           </div>
 
-          {/* СТРЕЛКИ (на мобильных чуть меньше) */}
+          {/* КНОПКИ УПРАВЛЕНИЯ (СТРЕЛКИ) */}
           <button 
             onClick={prevSlide}
             className="absolute left-[-10px] md:left-[-30px] top-[45%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-xl z-20 active:scale-90 transition-all border border-gray-100"
@@ -103,7 +103,7 @@ const Results = () => {
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-black" />
           </button>
 
-          {/* ИНДИКАТОРЫ */}
+          {/* ТОЧКИ ИНДИКАТОРЫ */}
           <div className="flex justify-center gap-2 md:gap-3 mt-6">
             {slides.map((_, i) => (
               <button
@@ -115,16 +115,6 @@ const Results = () => {
               />
             ))}
           </div>
-        </div>
-
-        {/* ПАМЯТКА ПО ФОТО */}
-        <div className="mt-12 max-w-xl mx-auto p-5 md:p-6 bg-white rounded-[30px] border border-dashed border-gray-200 text-center">
-            <p className="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">Размеры фотографий:</p>
-            <p className="text-[11px] md:text-xs text-gray-500 leading-relaxed font-medium">
-                Для мобильной версии мы используем формат <span className="text-black font-bold">3:4</span> или <span className="text-black font-bold">4:5</span>. <br/>
-                Загружайте фото в размере <span className="text-accent font-bold italic">900x1200 пикселей</span>. <br/>
-                Так они будут выглядеть четко и на телефонах, и на компьютерах.
-            </p>
         </div>
 
       </div>
