@@ -1,110 +1,82 @@
 import React from 'react';
-import { ShieldCheck, Sparkles, Calendar, Wallet, Zap, Heart } from 'lucide-react';
 
 const Block2 = () => {
-  const features = [
+  const points = [
     {
-      title: "Комфорт и безопасность",
-      desc: "Диодный лазер воздействует точечно на волосяной фолликул, не повреждая окружающую кожу. Без порезов, без ожогов и без длительного восстановления. Процедура проходит мягко и контролируемо.",
-      icon: <ShieldCheck className="text-accent w-6 h-6" />
+      bold: "Комфорт и безопасность.",
+      text: "Диодный лазер воздействует точечно на волосяной фолликул, не повреждая окружающую кожу. После процедуры не требуется длительное восстановление."
     },
     {
-      title: "Решение проблемы вросших волос",
-      desc: "Лазер разрушает корень волоса, поэтому он больше не растёт внутрь кожи. Исчезают воспаления, покраснения и болезненные уплотнения. Кожа становится ровной и гладкой.",
-      icon: <Sparkles className="text-accent w-6 h-6" />
+      bold: "Решает проблему вросших волос.",
+      text: "Лазер разрушает корень волоса, поэтому он больше не растёт внутрь кожи. Исчезают воспаления, покраснения и болезненные уплотнения. Кожа становится ровной и гладкой."
     },
     {
-      title: "Долгосрочный результат",
-      desc: "После курса процедур рост волос значительно сокращается, а многие зоны остаются гладкими на годы. Поддерживающие сеансы требуются редко — обычно раз в несколько месяцев.",
-      icon: <Calendar className="text-accent w-6 h-6" />
+      bold: "Долгосрочный результат.",
+      text: "После курса процедур рост волос значительно сокращается, а многие зоны остаются гладкими на годы. Поддерживающие сеансы требуются редко, примерно раз в 6 месяцев."
     },
     {
-      title: "Экономия времени и денег",
-      desc: "Бритва, воск и шугаринг требуют регулярных затрат и постоянных повторений. Лазерная эпиляция позволяет забыть о ежедневной или ежемесячной рутине и сократить расходы в перспективе.",
-      icon: <Wallet className="text-accent w-6 h-6" />
+      bold: "Экономия времени и денег.",
+      text: "Бритва, воск и шугаринг требуют регулярных затрат и постоянных повторений. Лазерная эпиляция позволяет забыть о ежедневной или ежемесячной рутине и сократить расходы в перспективе."
     },
     {
-      title: "Быстро и удобно",
-      desc: "Одна зона обрабатывается в среднем за 10–30 минут. Процедуру легко вписать даже в плотный график — без выпадения из привычного ритма жизни.",
-      icon: <Zap className="text-accent w-6 h-6" />
-    },
-    {
-      title: "Подходит большинству типов кожи",
-      desc: "Современное оборудование позволяет настраивать параметры индивидуально под фототип и особенности кожи. Процедуру можно проводить на разных зонах тела и в любое время года.",
-      icon: <Heart className="text-accent w-6 h-6" />
+      bold: "Быстро и удобно.",
+      text: "Одна зона обрабатывается в среднем за 10–30 минут. Процедуру легко вписать даже в плотный график — без выпадения из привычного ритма жизни."
     }
   ];
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-12 md:py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         
-        {/* ЗАГОЛОВОК БЛОКА */}
-        <div className="text-center mb-12 lg:mb-20">
-          <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-[#1a1a1a]">
-            Почему лазерная эпиляция — <br className="md:hidden" />
-            <span className="text-accent">это лучший выбор?</span>
+        {/* ЗАГОЛОВОК (как на референсе) */}
+        <div className="mb-10 md:mb-16">
+          <h2 className="text-xl md:text-4xl font-black uppercase tracking-tight text-[#1a1a1a] leading-tight">
+            ПОЧЕМУ ЛАЗЕРНАЯ ЭПИЛЯЦИЯ — <br className="hidden md:block" />
+            ЭТО ЛУЧШИЙ ВЫБОР?
           </h2>
-          <div className="w-20 h-1.5 bg-accent mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
           
-          {/* ЛЕВАЯ ЧАСТЬ: КАРТИНКА (ЗАГЛУШКА) */}
-          <div className="w-full lg:w-1/2 order-2 lg:order-1">
-            <div className="relative group">
-              {/* Декоративный фон за картинкой */}
-              <div className="absolute -top-4 -left-4 w-full h-full border-2 border-accent/30 rounded-[40px] -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-              
-              {/* Место под фото процесса или аппарата */}
-              <div className="aspect-[4/5] bg-gray-50 border-2 border-dashed border-gray-200 rounded-[40px] flex items-center justify-center overflow-hidden shadow-sm">
-                <div className="text-center p-8">
-                  <p className="text-gray-400 font-medium italic mb-2 text-sm md:text-base">
-                    Место для фото аппарата или процесса
-                  </p>
-                  <p className="text-[10px] text-gray-300 uppercase tracking-widest">
-                    Рекомендуется вертикальное фото
-                  </p>
-                </div>
-              </div>
-
-              {/* Плашка снизу картинки как на референсе */}
-              <div className="mt-8 text-center lg:text-left">
-                <button className="bg-accent hover:bg-[#ffbaba] text-black text-lg font-bold py-5 px-12 rounded-full transition-all shadow-lg active:scale-95 uppercase tracking-wider">
-                  Записаться
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* ПРАВАЯ ЧАСТЬ: СПИСОК ПРЕИМУЩЕСТВ */}
-          <div className="w-full lg:w-1/2 order-1 lg:order-2">
-            <div className="space-y-8 md:space-y-10">
-              {features.map((item, index) => (
-                <div key={index} className="flex gap-4 md:gap-6 group">
-                  {/* Иконка в розовом круге */}
-                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-accent/15 flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-300">
-                    {item.icon}
-                  </div>
+          {/* ЛЕВАЯ ЧАСТЬ: СПИСОК (на мобильных идет первым) */}
+          <div className="w-full lg:w-3/5 order-1">
+            <div className="space-y-6 md:space-y-8">
+              {points.map((point, index) => (
+                <div key={index} className="flex gap-4 items-start">
+                  {/* Точка как на скрине */}
+                  <div className="w-2 h-2 rounded-full bg-black mt-2.5 flex-shrink-0"></div>
                   
-                  {/* Текст */}
-                  <div className="flex flex-col">
-                    <h3 className="text-lg md:text-xl font-extrabold text-gray-900 mb-2 leading-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-gray-500 leading-relaxed font-medium">
-                      {item.desc}
-                    </p>
-                  </div>
+                  {/* Текст: Жирный + Обычный в одном блоке */}
+                  <p className="text-[15px] md:text-lg text-gray-700 leading-relaxed">
+                    <span className="font-extrabold text-black">{point.bold}</span> {point.text}
+                  </p>
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Дополнительный текст снизу (как на референсе) */}
-            <div className="mt-12 p-6 bg-gray-50 rounded-3xl border border-gray-100 italic">
-               <p className="text-sm md:text-base text-gray-600 text-center font-medium">
-                  Лазерная эпиляция в <span className="text-black font-bold">Kristll Studio</span> позволит Вам забыть о бритве и наслаждаться идеальной гладкостью кожи навсегда!
-               </p>
+          {/* ПРАВАЯ ЧАСТЬ: КАРТИНКА И ИТОГ (на мобильных фото меньше и выше плашки) */}
+          <div className="w-full lg:w-2/5 order-2 flex flex-col gap-8">
+            
+            {/* ФОТО (на мобильных сделали компактнее) */}
+            <div className="px-6 md:px-0"> {/* Доп. отступы на мобилках, чтобы фото было меньше */}
+                <div className="relative aspect-[4/3] md:aspect-[4/5] bg-gray-50 border-2 border-dashed border-gray-200 rounded-[30px] md:rounded-[40px] flex items-center justify-center overflow-hidden shadow-sm">
+                    <p className="text-gray-400 font-medium italic text-xs text-center px-4">
+                        Место для фото процесса <br/> или аппарата
+                    </p>
+                </div>
+            </div>
+
+            {/* ИТОГОВАЯ ПЛАШКА */}
+            <div className="text-center lg:text-left space-y-8">
+                <p className="text-[15px] md:text-lg text-gray-800 font-bold leading-snug max-w-sm mx-auto lg:mx-0">
+                    Лазерная эпиляция в <span className="text-accent uppercase">Мурино</span> в студии "Kristll" позволит Вам забыть о бритве и наслаждаться идеальной гладкостью кожи!
+                </p>
+
+                {/* Кнопка записи */}
+                <button className="bg-accent hover:bg-[#ffbaba] text-black text-base md:text-lg font-black py-4 px-12 rounded-full transition-all shadow-md active:scale-95 uppercase tracking-widest">
+                    Записаться
+                </button>
             </div>
           </div>
 
