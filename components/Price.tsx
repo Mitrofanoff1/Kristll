@@ -1,28 +1,23 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Percent } from 'lucide-react';
 
 const Price = () => {
   const [activeTab, setActiveTab] = useState('Комплексы');
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Список категорий (убрал Абонементы)
   const categories = [
-    'Комплексы', 'Абонементы', 'Бикини', 'Тело', 'Лицо', 'Руки', 'Ноги'
+    'Комплексы', 'Бикини', 'Тело', 'Лицо', 'Руки', 'Ноги'
   ];
 
-  // Данные прайса (добавил Абонементы как пример, можешь поправить цены)
   const priceData: { [key: string]: { name: string, oldPrice: string, newPrice: string, desc?: string }[] } = {
     'Комплексы': [
       { name: "КОМПЛЕКС S", desc: "подмышечные впадины + тотальное бикини + голени", oldPrice: "3800", newPrice: "3040" },
       { name: "КОМПЛЕКС M", desc: "ноги полностью + подмышечные впадины + тотальное бикини", oldPrice: "4500", newPrice: "3600" },
       { name: "КОМПЛЕКС L", desc: "руки до локтя + ноги полностью + подмышечные впадины + тотальное бикини", oldPrice: "5300", newPrice: "4240" },
-      { name: "КОМПЛЕКС XL", desc: "все тело полностью", oldPrice: "6300", newPrice: "5040" },
-    ],
-    'Абонементы': [
-      { name: "Абонемент на 3 сеанса (Любая зона)", desc: "Выгода до 15%", oldPrice: "6000", newPrice: "5100" },
-      { name: "Абонемент на 5 сеансов (Любая зона)", desc: "Выгода до 25%", oldPrice: "10000", newPrice: "7500" },
-      { name: "Абонемент на 10 сеансов (Любая зона)", desc: "Максимальная выгода", oldPrice: "20000", newPrice: "14000" },
+      { name: "КОМПЛЕКС XL", desc: "6 зон", oldPrice: "6300", newPrice: "5040" },
     ],
     'Бикини': [
       { name: "Классическое бикини", oldPrice: "1400", newPrice: "1120" },
@@ -57,7 +52,6 @@ const Price = () => {
     ]
   };
 
-  // Центрируем активный таб при клике (для мобилок)
   const handleTabClick = (cat: string, e: React.MouseEvent) => {
     setActiveTab(cat);
     const target = e.currentTarget as HTMLElement;
@@ -73,25 +67,24 @@ const Price = () => {
         
         {/* ЗАГОЛОВОК */}
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-5xl font-black uppercase mb-3">Стоимость услуг</h2>
-          <div className="flex items-center justify-center gap-2 text-gray-500 font-medium bg-gray-50 inline-flex mx-auto px-4 py-2 rounded-full">
+          <h2 className="text-2xl md:text-5xl font-black uppercase mb-3 tracking-tighter">Стоимость услуг</h2>
+          <div className="flex items-center justify-center gap-2 text-gray-500 font-medium bg-gray-50 inline-flex mx-auto px-4 py-2 rounded-full border border-gray-100">
              <Percent className="w-4 h-4 text-accent" />
-             <p className="text-xs md:text-base">Скидка 20% на первое посещение</p>
+             <p className="text-[11px] md:text-base uppercase tracking-wider font-bold">Скидка 20% на первое посещение</p>
           </div>
         </div>
 
-        {/* ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ КАТЕГОРИЙ (как на референсе) */}
+        {/* ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ КАТЕГОРИЙ */}
         <div className="relative mb-10 md:mb-16">
           <div 
             ref={scrollRef}
             className="flex overflow-x-auto no-scrollbar border-b border-gray-100 gap-6 md:gap-12 md:justify-center px-2"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={(e) => handleTabClick(cat, e)}
-                className={`pb-4 text-[15px] md:text-lg font-bold transition-all whitespace-nowrap relative ${
+                className={`pb-4 text-[15px] md:text-lg font-black transition-all whitespace-nowrap relative uppercase tracking-tight ${
                   activeTab === cat ? 'text-accent' : 'text-gray-400 hover:text-gray-600'
                 }`}
               >
@@ -113,21 +106,21 @@ const Price = () => {
                 className="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-5 border-b border-gray-50 group"
               >
                 <div className="flex-1">
-                  <h3 className="text-[15px] md:text-xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-[15px] md:text-xl font-black text-gray-900 leading-tight uppercase">
                     {item.name}
                   </h3>
                   {item.desc && (
-                    <p className="text-[11px] md:text-sm text-gray-400 mt-1 uppercase tracking-tight font-medium">
+                    <p className="text-[11px] md:text-sm text-gray-400 mt-1 uppercase tracking-tight font-bold italic">
                       {item.desc}
                     </p>
                   )}
                 </div>
                 
-                <div className="flex items-center gap-3 md:gap-4">
-                  <span className="text-gray-300 line-through text-xs md:text-lg font-medium">
+                <div className="flex items-center gap-3 md:gap-6">
+                  <span className="text-gray-300 line-through text-xs md:text-lg font-bold">
                     {item.oldPrice}р
                   </span>
-                  <span className="text-accent text-lg md:text-2xl font-extrabold">
+                  <span className="text-accent text-lg md:text-2xl font-black">
                     {item.newPrice}р
                   </span>
                 </div>
@@ -138,7 +131,7 @@ const Price = () => {
 
         {/* КНОПКА ЗАПИСИ */}
         <div className="mt-12 text-center px-4">
-            <button className="w-full md:w-auto bg-black text-white hover:bg-zinc-800 text-sm md:text-lg font-black py-4 md:py-5 px-10 md:px-16 rounded-full transition-all shadow-xl active:scale-95 uppercase tracking-widest">
+            <button className="w-full md:w-auto bg-black text-white hover:bg-zinc-800 text-sm md:text-lg font-black py-4 md:py-5 px-10 md:px-16 rounded-full transition-all shadow-xl active:scale-95 uppercase tracking-widest shadow-black/10">
                 Записаться со скидкой 20%
             </button>
         </div>
@@ -148,6 +141,10 @@ const Price = () => {
       <style jsx global>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </section>
