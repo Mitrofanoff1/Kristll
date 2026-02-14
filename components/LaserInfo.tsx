@@ -29,45 +29,45 @@ const LaserInfo = () => {
           <div className="w-full lg:w-3/5 z-10 flex flex-col">
             
             {/* Заголовок */}
-            <h2 className="text-2xl md:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-6 md:mb-8 text-[#1a1a1a] text-center lg:text-left">
-              Используем сертифицированный диодный лазер <br/>
-              <span className="text-accent text-[1.5rem] md:text-5xl">Pioneer Ozero Khanka 800W</span>
+            <h2 className="text-[1.3rem] md:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-6 md:mb-8 text-[#1a1a1a] text-center lg:text-left">
+              Используем сертифицированный диодный лазер <br className="hidden md:block"/>
+              <span className="text-accent text-[1.2rem] md:text-5xl">Pioneer Ozero Khanka 800W</span>
             </h2>
 
-            {/* ФОТО АППАРАТА ДЛЯ МОБИЛЬНЫХ (Сразу после 800W) */}
+            {/* ФОТО АППАРАТА ДЛЯ МОБИЛЬНЫХ (Сделано еще меньше - max-w-[260px]) */}
             <div className="lg:hidden w-full mb-8">
-              <div className="relative aspect-[3/4] max-w-[340px] mx-auto bg-gray-50 border-2 border-dashed border-gray-200 rounded-[30px] flex items-center justify-center overflow-hidden">
+              <div className="relative aspect-[4/5] max-w-[260px] mx-auto bg-gray-50 border-2 border-dashed border-gray-200 rounded-[30px] flex items-center justify-center overflow-hidden">
                 <div className="text-center p-6">
                   <Zap className="w-8 h-8 text-gray-200 mx-auto mb-2" />
-                  <p className="text-gray-400 font-medium text-[10px] uppercase tracking-widest">Pioneer Ozero Khanka</p>
+                  <p className="text-gray-400 font-bold text-[9px] uppercase tracking-[0.2em]">Pioneer Laser</p>
                 </div>
-                <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full border border-accent/10">
-                  <p className="text-[8px] font-black uppercase tracking-widest text-accent">USA Tech</p>
+                <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full border border-accent/10 shadow-sm">
+                  <p className="text-[7px] font-black uppercase tracking-widest text-accent">USA Tech</p>
                 </div>
               </div>
             </div>
 
             {/* Описание технологий */}
             <div className="mb-8 lg:mb-12 text-center lg:text-left">
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium mb-4">
-                Главная особенность <span className="font-bold text-black">Pioneer Ozero Khanka</span> — гибридный излучатель компании <span className="text-accent font-black uppercase tracking-widest text-sm">Coherent (USA)</span>, работающий сразу на трех видах волн: <span className="bg-accent/10 px-2 py-0.5 rounded text-accent font-bold">755 / 808 / 1064нм</span>.
+              <p className="text-gray-600 text-[15px] md:text-lg leading-relaxed font-medium mb-4">
+                Главная особенность <span className="font-bold text-black">Pioneer Ozero Khanka</span> — гибридный излучатель компании <span className="text-accent font-black uppercase tracking-widest text-[11px] md:text-sm">Coherent (USA)</span>, работающий сразу на трех видах волн: <span className="bg-accent/10 px-2 py-0.5 rounded text-accent font-bold">755 / 808 / 1064нм</span>.
               </p>
               
-              {/* Этот блок текста скрыт на мобильных, виден только на десктопе */}
+              {/* Скрыто на мобильных, видно только на десктопе */}
               <p className="hidden lg:block text-gray-500 text-sm md:text-base leading-relaxed border-l-4 border-accent/20 pl-6">
                 Благодаря этому, он эффективно удаляет любые виды волос на коже всех типов. Аппарат соответствует всем международным стандартам качества и безопасности.
               </p>
             </div>
 
             {/* СПИСОК ПЛАШЕК */}
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {features.map((item, index) => (
                 <div key={index} className="flex gap-4 md:gap-5 group">
                   <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-accent/10 flex items-center justify-center">
                     {item.icon}
                   </div>
                   <div>
-                    <p className="text-[14px] md:text-lg text-gray-700 leading-relaxed">
+                    <p className="text-[14px] md:text-lg text-gray-700 leading-tight md:leading-relaxed">
                       <span className="font-black text-black uppercase tracking-tight mr-2">{item.title}</span>
                       {item.text}
                     </p>
@@ -79,7 +79,6 @@ const LaserInfo = () => {
 
           {/* ПРАВАЯ ЧАСТЬ (ТОЛЬКО ДЛЯ ДЕСКТОПА) */}
           <div className="hidden lg:flex lg:w-2/5 flex-col gap-8">
-            {/* Основное фото */}
             <div className="relative aspect-[4/5] bg-gray-50 border-2 border-dashed border-gray-200 rounded-[40px] flex items-center justify-center overflow-hidden shadow-sm">
                <div className="text-center p-6">
                   <Zap className="w-10 h-10 text-gray-200 mx-auto mb-3" />
@@ -90,9 +89,8 @@ const LaserInfo = () => {
                </div>
             </div>
 
-            {/* Фото манипулы (только десктоп) */}
             <div className="relative w-full aspect-video bg-gray-50 border-2 border-dashed border-gray-200 rounded-[30px] flex items-center justify-center overflow-hidden">
-                <p className="text-gray-400 font-medium text-xs">Фото манипулы (охлаждение)</p>
+                <p className="text-gray-400 font-medium text-xs text-center px-4">Фото манипулы <br/> (охлаждение)</p>
                 <div className="absolute bottom-4 left-4 bg-accent px-3 py-1 rounded-full">
                     <p className="text-[9px] font-bold text-black uppercase tracking-tighter">Охлаждение до -20°C</p>
                 </div>
