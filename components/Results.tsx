@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight, Image as ImageIcon } from 'lucide-react';
 const Results = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Каждая карточка — это пара ДО и ПОСЛЕ
   const slides = [
     { id: 1, area: "Подмышечные впадины", result: "Результат после 3 сеансов" },
     { id: 2, area: "Голени", result: "Результат после 5 сеансов" },
@@ -22,70 +21,65 @@ const Results = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   }, [slides.length]);
 
-  // Автоматическое переключение
   useEffect(() => {
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, [nextSlide]);
 
   return (
-    <section className="py-16 md:py-24 bg-[#FAFAFA] overflow-hidden">
+    <section className="py-12 md:py-24 bg-[#FAFAFA] overflow-hidden">
       <div className="container mx-auto px-4">
         
-        {/* ЗАГОЛОВОК И ТЕКСТ */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-5xl font-black uppercase mb-6 tracking-tighter">
+        {/* ЗАГОЛОВОК */}
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-5xl font-black uppercase mb-4 tracking-tighter">
             Результаты наших клиентов
           </h2>
-          <p className="text-gray-500 text-sm md:text-lg leading-relaxed font-medium px-4">
-            Показываем реальные фотографии, чтобы вы могли оценить результаты, 
-            которых достигают наши клиенты с лазерной эпиляцией в <span className="text-accent font-bold">Kristll Studio.</span>
+          <p className="text-gray-500 text-[13px] md:text-lg leading-relaxed font-medium px-2">
+            Показываем реальные фотографии, чтобы вы могли оценить результаты наших клиентов в <span className="text-accent font-bold">Kristll Studio.</span>
           </p>
         </div>
 
-        {/* КОНТЕЙНЕР СЛАЙДЕРА */}
+        {/* СЛАЙДЕР */}
         <div className="relative max-w-5xl mx-auto">
           
-          {/* ОБЛАСТЬ СЛАЙДОВ */}
-          <div className="relative overflow-hidden rounded-[30px] md:rounded-[50px] bg-white shadow-xl border-4 border-white">
+          <div className="relative overflow-hidden rounded-[30px] md:rounded-[50px] bg-white shadow-lg border-[3px] md:border-4 border-white">
             <div 
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {slides.map((slide) => (
-                <div key={slide.id} className="w-full flex-shrink-0 p-2 md:p-4">
+                <div key={slide.id} className="w-full flex-shrink-0 p-1.5 md:p-4">
                   
-                  {/* ПАРА ФОТОГРАФИЙ (ДО И ПОСЛЕ) */}
-                  <div className="flex flex-col sm:flex-row gap-2 md:gap-4">
+                  {/* ФОТОГРАФИИ В ОДИН РЯД (И на ПК, и на Мобильных) */}
+                  <div className="flex flex-row gap-1.5 md:gap-4">
                     
-                    {/* ФОТО "ДО" */}
-                    <div className="relative flex-1 aspect-[4/5] bg-gray-100 rounded-[20px] md:rounded-[40px] flex items-center justify-center overflow-hidden">
-                       <div className="text-center">
-                          <ImageIcon className="w-8 h-8 text-gray-300 mx-auto mb-2" />
-                          <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Фото "ДО"</p>
-                          <p className="text-[8px] text-gray-300 mt-1 italic">Размер: 800x1000px</p>
+                    {/* ДО */}
+                    <div className="relative flex-1 aspect-[3/4] md:aspect-[4/5] bg-gray-50 rounded-[20px] md:rounded-[40px] flex items-center justify-center overflow-hidden">
+                       <div className="text-center p-2">
+                          <ImageIcon className="w-6 h-6 md:w-8 md:h-8 text-gray-200 mx-auto mb-1" />
+                          <p className="text-[8px] md:text-[10px] text-gray-400 uppercase font-bold tracking-widest">До</p>
                        </div>
-                       <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">До</div>
+                       <div className="absolute top-2 left-2 md:top-4 md:left-4 bg-black/30 backdrop-blur-sm text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-full uppercase">До</div>
                     </div>
 
-                    {/* ФОТО "ПОСЛЕ" */}
-                    <div className="relative flex-1 aspect-[4/5] bg-accent/5 rounded-[20px] md:rounded-[40px] flex items-center justify-center overflow-hidden border-2 border-accent/10">
-                       <div className="text-center">
-                          <ImageIcon className="w-8 h-8 text-accent/30 mx-auto mb-2" />
-                          <p className="text-[10px] text-accent/40 uppercase font-bold tracking-widest">Фото "ПОСЛЕ"</p>
-                          <p className="text-[8px] text-accent/20 mt-1 italic">Размер: 800x1000px</p>
+                    {/* ПОСЛЕ */}
+                    <div className="relative flex-1 aspect-[3/4] md:aspect-[4/5] bg-accent/5 rounded-[20px] md:rounded-[40px] flex items-center justify-center overflow-hidden border border-accent/10">
+                       <div className="text-center p-2">
+                          <ImageIcon className="w-6 h-6 md:w-8 md:h-8 text-accent/30 mx-auto mb-1" />
+                          <p className="text-[8px] md:text-[10px] text-accent/40 uppercase font-bold tracking-widest">После</p>
                        </div>
-                       <div className="absolute top-4 right-4 bg-accent text-black text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-lg">После</div>
+                       <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-accent text-black text-[8px] md:text-[10px] font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-full uppercase shadow-md">После</div>
                     </div>
 
                   </div>
 
-                  {/* ОПИСАНИЕ ПОД ФОТО */}
-                  <div className="text-center mt-6 pb-4">
-                    <p className="text-gray-900 font-black uppercase text-sm md:text-lg tracking-tight">
+                  {/* ОПИСАНИЕ */}
+                  <div className="text-center mt-4 md:mt-6 pb-2">
+                    <p className="text-gray-900 font-black uppercase text-xs md:text-lg tracking-tight leading-none">
                         {slide.area}
                     </p>
-                    <p className="text-accent font-bold text-xs md:text-sm italic">
+                    <p className="text-accent font-bold text-[10px] md:text-sm italic mt-1">
                         {slide.result}
                     </p>
                   </div>
@@ -95,41 +89,41 @@ const Results = () => {
             </div>
           </div>
 
-          {/* КНОПКИ УПРАВЛЕНИЯ (СТРЕЛКИ) */}
+          {/* СТРЕЛКИ (на мобильных чуть меньше) */}
           <button 
             onClick={prevSlide}
-            className="absolute left-[-20px] md:left-[-30px] top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-2xl z-20 hover:scale-110 active:scale-90 transition-all border border-gray-100"
+            className="absolute left-[-10px] md:left-[-30px] top-[45%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-xl z-20 active:scale-90 transition-all border border-gray-100"
           >
-            <ChevronLeft className="w-6 h-6 text-black" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-black" />
           </button>
           <button 
             onClick={nextSlide}
-            className="absolute right-[-20px] md:right-[-30px] top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-2xl z-20 hover:scale-110 active:scale-90 transition-all border border-gray-100"
+            className="absolute right-[-10px] md:right-[-30px] top-[45%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-xl z-20 active:scale-90 transition-all border border-gray-100"
           >
-            <ChevronRight className="w-6 h-6 text-black" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-black" />
           </button>
 
-          {/* ТОЧКИ (ИНДИКАТОРЫ) */}
-          <div className="flex justify-center gap-3 mt-8">
+          {/* ИНДИКАТОРЫ */}
+          <div className="flex justify-center gap-2 md:gap-3 mt-6">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrentSlide(i)}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === currentSlide ? 'w-10 bg-accent' : 'w-3 bg-gray-200'
+                className={`h-1 md:h-1.5 rounded-full transition-all ${
+                  i === currentSlide ? 'w-8 md:w-10 bg-accent' : 'w-2 md:w-3 bg-gray-200'
                 }`}
               />
             ))}
           </div>
         </div>
 
-        {/* ТЕХНИЧЕСКАЯ ПОДСКАЗКА ДЛЯ ТЕБЯ */}
-        <div className="mt-16 max-w-2xl mx-auto p-6 bg-white rounded-3xl border border-dashed border-gray-200 text-center">
-            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">Памятка для контента:</p>
-            <p className="text-xs text-gray-500 leading-relaxed">
-                Для этого блока подготовьте <span className="text-black font-bold">8 фотографий</span> (4 пары). <br/>
-                Рекомендуемый размер каждой фотографии: <span className="text-accent font-bold">800x1000 пикселей</span> (вертикальный формат 4:5). <br/>
-                Важно, чтобы обе фотографии в паре были сделаны с одного ракурса и при похожем освещении.
+        {/* ПАМЯТКА ПО ФОТО */}
+        <div className="mt-12 max-w-xl mx-auto p-5 md:p-6 bg-white rounded-[30px] border border-dashed border-gray-200 text-center">
+            <p className="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-2">Размеры фотографий:</p>
+            <p className="text-[11px] md:text-xs text-gray-500 leading-relaxed font-medium">
+                Для мобильной версии мы используем формат <span className="text-black font-bold">3:4</span> или <span className="text-black font-bold">4:5</span>. <br/>
+                Загружайте фото в размере <span className="text-accent font-bold italic">900x1200 пикселей</span>. <br/>
+                Так они будут выглядеть четко и на телефонах, и на компьютерах.
             </p>
         </div>
 
