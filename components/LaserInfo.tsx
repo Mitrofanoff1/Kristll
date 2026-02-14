@@ -33,11 +33,11 @@ const LaserInfo = () => {
             </h2>
 
             <div className="mb-10 lg:mb-12">
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium mb-6">
-                Главная особенность <span className="font-bold text-black italic">Pioneer Ozero Khanka</span> — гибридный излучатель компании <span className="text-accent font-black uppercase tracking-widest text-sm">Coherent (USA)</span>, работающий сразу на трех видах волн: <span className="bg-accent/10 px-2 py-0.5 rounded text-accent font-bold">755 / 808 / 1064нм</span>.
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium mb-4">
+                Главная особенность <span className="font-bold text-black">Pioneer Ozero Khanka</span> — гибридный излучатель компании <span className="text-accent font-black uppercase tracking-widest text-sm">Coherent (USA)</span>, работающий сразу на трех видах волн: <span className="bg-accent/10 px-2 py-0.5 rounded text-accent font-bold">755 / 808 / 1064нм</span>.
               </p>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed border-l-4 border-accent/20 pl-6 italic">
-                Благодаря этому, он эффективно удаляет любые виды волос на коже всех типов. Аппарат сертифицирован и соответствует всем международным стандартам качества и безопасности.
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed border-l-4 border-accent/20 pl-6">
+                Благодаря этому, он эффективно удаляет любые виды волос на коже всех типов. Аппарат соответствует всем международным стандартам качества и безопасности.
               </p>
             </div>
 
@@ -65,17 +65,17 @@ const LaserInfo = () => {
             <div className="relative aspect-[3/4] md:aspect-[4/5] bg-gray-50 border-2 border-dashed border-gray-200 rounded-[40px] flex items-center justify-center overflow-hidden shadow-sm group">
                <div className="text-center p-6">
                   <Zap className="w-10 h-10 text-gray-200 mx-auto mb-3" />
-                  <p className="text-gray-400 font-medium italic text-sm">Фото лазера Pioneer</p>
+                  <p className="text-gray-400 font-medium text-sm text-center px-4">Фото лазера Pioneer <br/> (Рекомендуемый размер: 900x1200px)</p>
                </div>
-               {/* Декоративная подпись */}
+               
                <div className="absolute top-6 right-6 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-2xl border border-accent/10">
                   <p className="text-[10px] font-black uppercase tracking-widest text-accent">USA Technology</p>
                </div>
             </div>
 
-            {/* Дополнительное фото (например, манипула/ручка) */}
+            {/* Дополнительное фото */}
             <div className="relative w-full aspect-video bg-gray-50 border-2 border-dashed border-gray-200 rounded-[30px] flex items-center justify-center overflow-hidden">
-                <p className="text-gray-400 font-medium italic text-xs">Фото манипулы (охлаждение)</p>
+                <p className="text-gray-400 font-medium text-xs">Фото манипулы (охлаждение)</p>
                 <div className="absolute bottom-4 left-4 bg-accent px-3 py-1 rounded-full">
                     <p className="text-[9px] font-bold text-black uppercase tracking-tighter">Охлаждение до -20°C</p>
                 </div>
