@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="order-4">
               <p className="text-base md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
                 Видимый результат уже после 1 сеанса. <br className="md:hidden" />
-                Гарантируем безболезненную процедуру — или 100% вернем деньги.
+                Гарантируем безболезненную процедуру — или вернем деньги.
               </p>
             </div>
 
