@@ -15,26 +15,26 @@ const Hero = () => {
           {/* КОНТЕНТНЫЙ БЛОК */}
           <div className="w-full lg:w-3/5 z-10 flex flex-col text-center lg:text-left">
             
-            {/* 1. Розовая плашка */}
+            {/* 1. Розовая плашка (Мурино) */}
             <div className="inline-block self-center lg:self-start mb-4">
               <span className="bg-accent px-4 py-1.5 rounded-full text-[11px] md:text-sm font-bold text-black shadow-sm uppercase tracking-wide">
                 Эпиляция в Мурино всего от 420 руб*
               </span>
             </div>
 
-            {/* 2. Главный заголовок (Размер уменьшен для мобильных, текст полный) */}
+            {/* 2. Главный оффер */}
             <h1 className="text-[1.8rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-[#1a1a1a] uppercase tracking-tighter">
               Избавьтесь от нежелательных волос с помощью <br className="hidden sm:block"/> 
               <span className="text-accent drop-shadow-sm">лазерной эпиляции</span>
             </h1>
 
-            {/* 3. Подзаголовок (Текст по твоему запросу) */}
+            {/* 3. Подзаголовок (Текст обновлен) */}
             <p className="text-[15px] md:text-xl text-gray-600 mb-6 max-w-xl mx-auto lg:mx-0 font-medium leading-snug">
               Видимый результат уже после 1 сеанса. <br className="hidden md:block" />
               Гарантируем безболезненную процедуру — или вернем деньги.
             </p>
 
-            {/* 4. КНОПКИ (Компактные для мобильных) */}
+            {/* 4. КНОПКИ */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-8">
               <button className="w-full sm:w-60 bg-accent hover:bg-[#ffbaba] text-black text-base font-extrabold py-4 rounded-full transition-all shadow-md active:scale-95 uppercase tracking-wider">
                 Записаться
@@ -44,22 +44,17 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* 5. ФОТО ДЛЯ МОБИЛЬНЫХ (Теперь оно выше преимуществ, чтобы было "не грустно") */}
+            {/* 5. ФОТО ДЛЯ МОБИЛЬНЫХ (БЕЗ ПЛАШКИ) */}
             <div className="lg:hidden w-full mb-10 relative">
                 <div className="relative w-full aspect-[4/3] max-w-[340px] mx-auto bg-gray-50 border-2 border-dashed border-gray-200 rounded-[30px] flex items-center justify-center overflow-hidden">
-                    <p className="text-gray-400 font-medium italic text-[10px]">Фото Кристины</p>
-                    
-                    {/* Бейдж Кристины */}
-                    <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-lg border border-accent/10 text-left">
-                        <p className="text-sm font-bold text-gray-900 leading-none">Кристина Горячева</p>
-                        <p className="text-[8px] text-gray-400 font-bold uppercase mt-1 tracking-wider">
-                          ВЛАДЕЛИЦА KRISTLL STUDIO
-                        </p>
-                    </div>
+                    {/* Здесь будет твоя вторая (мобильная) фотография */}
+                    <p className="text-gray-400 font-medium italic text-[10px] text-center px-4">
+                        Мобильное фото Кристины <br/> (без плашки)
+                    </p>
                 </div>
             </div>
 
-            {/* 6. ПРЕИМУЩЕСТВА (Полные тексты возвращены) */}
+            {/* 6. ПРЕИМУЩЕСТВА (Полный текст) */}
             <div className="flex flex-col gap-4 text-left max-w-2xl mx-auto lg:mx-0 border-t border-gray-50 pt-6">
               <div className="flex items-start gap-3">
                 <div className="bg-accent/20 p-2 rounded-lg mt-0.5">
@@ -90,11 +85,15 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* ПРАВАЯ ЧАСТЬ: ФОТО ДЛЯ КОМПЬЮТЕРОВ */}
+          {/* ПРАВАЯ ЧАСТЬ: ФОТО ДЛЯ КОМПЬЮТЕРОВ (С ПЛАШКОЙ) */}
           <div className="hidden lg:flex lg:w-2/5 justify-end sticky top-20">
              <div className="relative w-full aspect-[4/5] max-w-[420px] bg-gray-50 border-2 border-dashed border-gray-200 rounded-[40px] flex items-center justify-center overflow-hidden shadow-2xl">
-                <p className="text-gray-400 font-medium italic">Фото Кристины</p>
+                {/* Здесь будет твоя основная (компьютерная) фотография */}
+                <p className="text-gray-400 font-medium italic text-center px-4">
+                    Компьютерное фото Кристины <br/> (с плашкой снизу)
+                </p>
                 
+                {/* Плашка с именем (только для компьютеров) */}
                 <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-[30px] shadow-2xl border border-accent/10">
                     <p className="text-xl font-bold text-gray-900 mb-1 leading-none">Кристина Горячева</p>
                     <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.15em]">
