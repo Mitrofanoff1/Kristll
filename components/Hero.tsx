@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Zap, Eye, CheckCircle2, Sparkles } from 'lucide-react';
 
 const Hero = () => {
@@ -28,7 +29,7 @@ const Hero = () => {
               <span className="text-accent drop-shadow-sm">лазерной эпиляции</span>
             </h1>
 
-            {/* 3. Подзаголовок (Текст обновлен) */}
+            {/* 3. Подзаголовок */}
             <p className="text-[15px] md:text-xl text-gray-600 mb-6 max-w-xl mx-auto lg:mx-0 font-medium leading-snug">
               Видимый результат уже после 1 сеанса. <br className="hidden md:block" />
               Гарантируем безболезненную процедуру — или вернем деньги.
@@ -44,17 +45,20 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* 5. ФОТО ДЛЯ МОБИЛЬНЫХ (БЕЗ ПЛАШКИ) */}
+            {/* 5. ФОТО ДЛЯ МОБИЛЬНЫХ (WebP) */}
             <div className="lg:hidden w-full mb-10 relative">
-                <div className="relative w-full aspect-[4/3] max-w-[340px] mx-auto bg-gray-50 border-2 border-dashed border-gray-200 rounded-[30px] flex items-center justify-center overflow-hidden">
-                    {/* Здесь будет твоя вторая (мобильная) фотография */}
-                    <p className="text-gray-400 font-medium italic text-[10px] text-center px-4">
-                        Мобильное фото Кристины <br/> (без плашки)
-                    </p>
+                <div className="relative w-full aspect-[4/3] max-w-[340px] mx-auto overflow-hidden rounded-[30px] shadow-lg border border-gray-100 bg-gray-50">
+                    <Image 
+                      src="/hero-mobile.webp" 
+                      alt="Кристина Горячева"
+                      fill
+                      className="object-cover object-top"
+                      priority
+                    />
                 </div>
             </div>
 
-            {/* 6. ПРЕИМУЩЕСТВА (Полный текст) */}
+            {/* 6. ПРЕИМУЩЕСТВА */}
             <div className="flex flex-col gap-4 text-left max-w-2xl mx-auto lg:mx-0 border-t border-gray-50 pt-6">
               <div className="flex items-start gap-3">
                 <div className="bg-accent/20 p-2 rounded-lg mt-0.5">
@@ -85,15 +89,18 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* ПРАВАЯ ЧАСТЬ: ФОТО ДЛЯ КОМПЬЮТЕРОВ (С ПЛАШКОЙ) */}
+          {/* ПРАВАЯ ЧАСТЬ: ФОТО ДЛЯ КОМПЬЮТЕРОВ (WebP) */}
           <div className="hidden lg:flex lg:w-2/5 justify-end sticky top-20">
-             <div className="relative w-full aspect-[4/5] max-w-[420px] bg-gray-50 border-2 border-dashed border-gray-200 rounded-[40px] flex items-center justify-center overflow-hidden shadow-2xl">
-                {/* Здесь будет твоя основная (компьютерная) фотография */}
-                <p className="text-gray-400 font-medium italic text-center px-4">
-                    Компьютерное фото Кристины <br/> (с плашкой снизу)
-                </p>
+             <div className="relative w-full aspect-[4/5] max-w-[420px] overflow-hidden rounded-[40px] shadow-2xl border border-gray-50 bg-gray-50">
+                <Image 
+                  src="/hero-desktop.webp" 
+                  alt="Кристина Горячева - Владелица Kristll Studio"
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 
-                {/* Плашка с именем (только для компьютеров) */}
+                {/* Плашка с именем */}
                 <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-[30px] shadow-2xl border border-accent/10">
                     <p className="text-xl font-bold text-gray-900 mb-1 leading-none">Кристина Горячева</p>
                     <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.15em]">
