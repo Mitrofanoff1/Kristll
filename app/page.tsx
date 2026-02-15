@@ -5,7 +5,8 @@ import Results from "@/components/Results";
 import Reviews from "@/components/Reviews";
 import LaserInfo from "@/components/LaserInfo";
 import Preparation from "@/components/Preparation";
-import FAQ from "@/components/FAQ"; // 1. Импортируем
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer"; // 1. Импорт
 import Block2 from "@/components/Block2"; 
 
 export default function Home() {
@@ -18,7 +19,8 @@ export default function Home() {
       <Reviews />
       <LaserInfo />
       <Preparation />
-      <FAQ /> {/* 2. Вставляем FAQ сюда */}
+      <FAQ />
+      <Footer /> {/* 2. Твой футер в самом конце */}
       
       {/* <Block2 /> */}
     </main>
