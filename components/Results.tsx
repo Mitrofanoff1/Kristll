@@ -30,17 +30,17 @@ const Results = () => {
     <section className="py-12 md:py-24 bg-[#FAFAFA] overflow-hidden">
       <div className="container mx-auto px-4">
         
-        {/* ЗАГОЛОВОК */}
+        {/* ВЕРХНЯЯ ЧАСТЬ: ЗАГОЛОВОК И НОВЫЙ ТЕКСТ */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-          <h2 className="text-2xl md:text-5xl font-black uppercase mb-4 tracking-tighter">
+          <h2 className="text-2xl md:text-5xl font-black uppercase mb-4 tracking-tighter leading-tight">
             Результаты наших клиентов
           </h2>
-          <p className="text-gray-500 text-[13px] md:text-lg leading-relaxed font-medium px-2">
-            Показываем реальные фотографии, чтобы вы могли оценить результаты наших клиентов в <span className="text-accent font-bold">Kristll Studio.</span>
+          <p className="text-gray-500 text-[14px] md:text-lg leading-relaxed font-medium px-4">
+            Мы показываем только реальные фото наших клиенток, <span className="text-black font-bold italic-none underline decoration-accent decoration-2 underline-offset-4">без фильтров и обработки.</span>
           </p>
         </div>
 
-        {/* СЛАЙДЕР */}
+        {/* СЛАЙДЕР (ФОТО ВСЕГДА В РЯД) */}
         <div className="relative max-w-5xl mx-auto">
           
           <div className="relative overflow-hidden rounded-[30px] md:rounded-[50px] bg-white shadow-lg border-[3px] md:border-4 border-white">
@@ -51,7 +51,7 @@ const Results = () => {
               {slides.map((slide) => (
                 <div key={slide.id} className="w-full flex-shrink-0 p-1.5 md:p-4">
                   
-                  {/* ФОТОГРАФИИ В ОДИН РЯД */}
+                  {/* ФОТОГРАФИИ */}
                   <div className="flex flex-row gap-1.5 md:gap-4">
                     
                     {/* ДО */}
@@ -79,7 +79,7 @@ const Results = () => {
                     <p className="text-gray-900 font-black uppercase text-xs md:text-lg tracking-tight leading-none">
                         {slide.area}
                     </p>
-                    <p className="text-accent font-bold text-[10px] md:text-sm italic mt-1">
+                    <p className="text-accent font-bold text-[10px] md:text-sm mt-1 uppercase tracking-tighter">
                         {slide.result}
                     </p>
                   </div>
@@ -89,7 +89,7 @@ const Results = () => {
             </div>
           </div>
 
-          {/* КНОПКИ УПРАВЛЕНИЯ (СТРЕЛКИ) */}
+          {/* СТРЕЛКИ */}
           <button 
             onClick={prevSlide}
             className="absolute left-[-10px] md:left-[-30px] top-[45%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-xl z-20 active:scale-90 transition-all border border-gray-100"
@@ -115,6 +115,13 @@ const Results = () => {
               />
             ))}
           </div>
+        </div>
+
+        {/* НИЖНЯЯ ЧАСТЬ: НОВЫЙ ТЕКСТ ПОД ФОТОГРАФИЯМИ */}
+        <div className="mt-12 md:mt-16 max-w-3xl mx-auto text-center px-4">
+            <p className="text-gray-700 font-bold text-[14px] md:text-[1.3rem] leading-relaxed tracking-tight">
+              Эти снимки — доказательство того, что регулярный курс <span className="text-accent">избавляет от раздражений, вросших волос и бритвенных порезов,</span> оставляя кожу гладкой и ухоженной на долгие годы.
+            </p>
         </div>
 
       </div>
