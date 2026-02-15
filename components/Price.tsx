@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState, useRef } from 'react';
-import { Percent } from 'lucide-react';
+import { Percent, MessageCircle } from 'lucide-react';
 
 const Price = () => {
   const [activeTab, setActiveTab] = useState('Комплексы');
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Список категорий (убрал Абонементы)
   const categories = [
     'Комплексы', 'Бикини', 'Тело', 'Лицо', 'Руки', 'Ноги'
   ];
@@ -67,7 +66,7 @@ const Price = () => {
         
         {/* ЗАГОЛОВОК */}
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-5xl font-black uppercase mb-3 tracking-tighter">Стоимость услуг</h2>
+          <h2 className="text-2xl md:text-5xl font-black uppercase mb-3 tracking-tighter leading-tight">Стоимость услуг</h2>
           <div className="flex items-center justify-center gap-2 text-gray-500 font-medium bg-gray-50 inline-flex mx-auto px-4 py-2 rounded-full border border-gray-100">
              <Percent className="w-4 h-4 text-accent" />
              <p className="text-[11px] md:text-base uppercase tracking-wider font-bold">Скидка 20% на первое посещение</p>
@@ -110,7 +109,7 @@ const Price = () => {
                     {item.name}
                   </h3>
                   {item.desc && (
-                    <p className="text-[11px] md:text-sm text-gray-400 mt-1 uppercase tracking-tight font-bold italic">
+                    <p className="text-[11px] md:text-sm text-gray-400 mt-1 uppercase tracking-tight font-bold italic-none">
                       {item.desc}
                     </p>
                   )}
@@ -129,11 +128,24 @@ const Price = () => {
           </div>
         </div>
 
-        {/* КНОПКА ЗАПИСИ */}
-        <div className="mt-12 text-center px-4">
-            <button className="w-full md:w-auto bg-black text-white hover:bg-zinc-800 text-sm md:text-lg font-black py-4 md:py-5 px-10 md:px-16 rounded-full transition-all shadow-xl active:scale-95 uppercase tracking-widest shadow-black/10">
+        {/* КНОПКА ЗАПИСИ + ДОПОЛНИТЕЛЬНЫЙ БЛОК КОНСУЛЬТАЦИИ */}
+        <div className="mt-12 md:mt-16 text-center px-4 max-w-2xl mx-auto">
+            {/* Основная кнопка */}
+            <button className="w-full md:w-auto bg-black text-white hover:bg-zinc-800 text-sm md:text-lg font-black py-4 md:py-5 px-10 md:px-16 rounded-full transition-all shadow-xl active:scale-95 uppercase tracking-widest shadow-black/10 mb-10">
                 Записаться со скидкой 20%
             </button>
+
+            {/* Блок "Не нашли зону" */}
+            <div className="pt-10 border-t border-gray-100">
+               <p className="text-gray-500 font-bold text-sm md:text-base mb-6 leading-relaxed">
+                  Не нашли свой комплекс или зону? <br className="hidden md:block"/> 
+                  Свяжитесь с нами и мы подберем его вместе
+               </p>
+               <button className="w-full md:w-auto flex items-center justify-center gap-3 bg-white border-2 border-accent text-black hover:bg-accent/5 text-[11px] md:text-sm font-black py-4 px-8 rounded-full transition-all active:scale-95 uppercase tracking-widest mx-auto">
+                  <MessageCircle className="w-4 h-4 text-accent" />
+                  Связаться для консультации
+               </button>
+            </div>
         </div>
 
       </div>
