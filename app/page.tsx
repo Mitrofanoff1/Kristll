@@ -2,7 +2,8 @@ import Hero from "@/components/Hero";
 import Block3 from "@/components/Block3";
 import Price from "@/components/Price";
 import Results from "@/components/Results";
-import LaserInfo from "@/components/LaserInfo"; // Добавь этот импорт
+import LaserInfo from "@/components/LaserInfo";
+import Preparation from "@/components/Preparation"; // Импорт
 import Block2 from "@/components/Block2"; 
 
 export default function Home() {
@@ -12,7 +13,8 @@ export default function Home() {
       <Block3 />
       <Price />
       <Results />
-      <LaserInfo /> {/* Информация о лазере */}
+      <LaserInfo />
+      <Preparation /> {/* Блок подготовки */}
       
       {/* <Block2 /> */}
     </main>
