@@ -2,9 +2,10 @@ import Hero from "@/components/Hero";
 import Block3 from "@/components/Block3";
 import Price from "@/components/Price";
 import Results from "@/components/Results";
-import Reviews from "@/components/Reviews"; // 1. Импортируем
+import Reviews from "@/components/Reviews";
 import LaserInfo from "@/components/LaserInfo";
 import Preparation from "@/components/Preparation";
+import FAQ from "@/components/FAQ"; // 1. Импортируем
 import Block2 from "@/components/Block2"; 
 
 export default function Home() {
@@ -14,9 +15,10 @@ export default function Home() {
       <Block3 />
       <Price />
       <Results />
-      <Reviews /> {/* 2. Ставим сюда */}
+      <Reviews />
       <LaserInfo />
       <Preparation />
+      <FAQ /> {/* 2. Вставляем FAQ сюда */}
       
       {/* <Block2 /> */}
     </main>
